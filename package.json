@@ -1,0 +1,52 @@
+{
+  "name": "root",
+  "private": true,
+  "author": {
+    "name": "Kevin Boosten",
+    "email": "kboosten@ilionx.com",
+    "url": "https://www.kevinboosten.dev/"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "clean": "lerna clean",
+    "postinstall": "npm run bootstrap",
+    "ci:publish": "lerna publish from-package -y --no-verify-access"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@commitlint/config-lerna-scopes": "^12.1.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^6.0.0",
+    "lerna": "^4.0.0",
+    "prettier": "2.2.1"
+  },
+  "bugs": {
+    "url": "https://github.com/ilionx/angular-schematics/issues"
+  },
+  "homepage": "https://github.com/ilionx/angular-schematics",
+  "repository": "https://github.com/ilionx/angular-schematics.git",
+  "keywords": [
+    "angular",
+    "schematics",
+    "ionic",
+    "app center"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
+}

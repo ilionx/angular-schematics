@@ -1,0 +1,23 @@
+name: Push
+on:
+  push:
+    branches:
+      - '*/*'
+      - '*'
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Build packages
+        run: npm run build
+      - name: Run Unit Tests
+        run: npm run test
+      # - name: Execute the schematic against the sandbox
+      #   run: yarn ci:sandbox
+      # - name: Execute the schematic against the sandbox workspace
+      #   run: yarn ci:sandbox-workspace
