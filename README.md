@@ -2,9 +2,11 @@
 
 Useful schematics for Angular and Ionic projects.
 
+This project uses [Lerna](https://github.com/lerna/lerna) with [Yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/.)
+
 ## Packages
 
-This is a monorepo which contains many packages:
+This is a monorepo which contains many schematic related packages:
 
 | Project                     | Package                                                                                        | Version                                                                                                                                           | Links                                                                                                    |
 | --------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
@@ -16,12 +18,10 @@ This is a monorepo which contains many packages:
 
 To get started locally, follow these instructions:
 
-1. If you haven't done it already, make a fork of this repo.
-1. Clone to your local computer using `git`.
-1. Make sure that you have the LTS version Node or later installed. See instructions [here](https://nodejs.org/en/download/).
+1. Clone this repo.
+1. Make sure that you have NodeJS LTS or later installed. See instructions [here](https://nodejs.org/en/download/).
 1. Make sure that you have `yarn` installed; see instructions [here](https://yarnpkg.com/lang/en/docs/install/).
-1. Run `yarn` (no arguments) from the root of your clone of this project.
-1. Run `yarn bootstrap` to link local packages together and install remaining package dependencies. [Read more](https://github.com/lerna/lerna/tree/master/commands/bootstrap).
+1. Run `yarn` (no arguments) from the root of your clone of this project. This will install all the dependencies for your configured workspaces.
 
 ### Sandbox project
 
@@ -31,5 +31,5 @@ For testing and development, you can execute your schematic against the applicat
 
 #### Sandbox Preparation
 
-1. Run `yarn` (no arguments) from the `sandbox` directory.
-1. Run `yarn run link:all` to link schematic packages.
+1. Run `yarn` (no arguments) from the root.
+1. Run the specific schematic in the `sandbox` directory. E.g.: `yarn --cwd sandbox ng add @ilionx/app-center-build-config com.ilionx.dummy`
