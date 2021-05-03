@@ -5,11 +5,14 @@
   "useWorkspaces": true,
   "command": {
     "publish": {
+      "createRelease": "github",
+      "allowBranch": "master",
       "conventionalCommits": true,
       "message": "chore(release): %s"
     },
     "version": {
-      "push": false,
+      "push": true,
+      "createRelease": "github",
       "allowBranch": "master",
       "conventionalCommits": true,
       "message": "chore(release): %s"
