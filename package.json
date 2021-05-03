@@ -7,14 +7,16 @@
     "url": "https://www.kevinboosten.dev/"
   },
   "scripts": {
+    "prepare": "husky install",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "test": "lerna run test",
     "clean": "lerna clean",
-    "postinstall": "npm run bootstrap",
     "ci:publish": "lerna publish from-package -y --no-verify-access",
     "sandbox:clean": "git checkout HEAD -- sandbox && git clean -f -d sandbox",
-    "sandbox:run:app-center-build-config": "cd sandbox && npx ng add @ilionx/app-center-build-config com.ilionx.dummy"
+    "sandbox:run:app-center-build-config": "yarn -cwd sandbox && yarn ng add @ilionx/app-center-build-config com.ilionx.dummy",
+    "sandbox:run:all": "yarn sandbox:clean && yarn sandbox:run:app-center-build-config",
+    "ci:sandbox": "yarn sandbox:run:all"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
@@ -24,11 +26,15 @@
     "lerna": "^4.0.0",
     "prettier": "2.2.1"
   },
+  "workspaces": [
+    "packages/*",
+    "sandbox"
+  ],
   "bugs": {
     "url": "https://github.com/ilionx/angular-schematics/issues"
   },
   "homepage": "https://github.com/ilionx/angular-schematics",
-  "repository": "https://github.com/ilionx/angular-schematics.git",
+  "repository": "ssh://git@github.com:ilionx/angular-schematics.git",
   "keywords": [
     "angular",
     "schematics",
