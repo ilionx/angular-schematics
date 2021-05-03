@@ -40,14 +40,12 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "commitlint": {
     "extends": [
       "@commitlint/config-lerna-scopes"
     ]
+  },
+  "lint-staged": {
+    "*.{js,json,css,scss,md,ts,html}": "prettier --write"
   }
 }
