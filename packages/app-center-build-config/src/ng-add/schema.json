@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "app-center-build-config",
+  "title": "app-center-build-config Schema",
+  "type": "object",
+  "properties": {
+    "appId": {
+      "type": "string",
+      "description": "The unique app id of your mobile application",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What is the unique id of your app?"
+    }
+  },
+  "required": ["appId"],
+  "additionalProperties": false
+}

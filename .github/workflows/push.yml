@@ -1,0 +1,22 @@
+name: Push
+on:
+  push:
+    branches:
+      - '*/*'
+      - '*'
+      - '!master'
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: Run Yarn
+        run: yarn
+      - name: Build packages
+        run: yarn build
+      - name: Run Unit Tests
+        run: yarn test
+      - name: Execute the schematic against the sandbox
+        run: yarn test:sandbox

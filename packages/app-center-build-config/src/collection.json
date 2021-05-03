@@ -1,0 +1,10 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "description": "This schematic will add the App Center build configuration to build your Ionic + Capacitor app with Microsoft App Center",
+      "factory": "./ng-add/index#appCenterBuildConfig",
+      "schema": "./ng-add/schema.json"
+    }
+  }
+}
