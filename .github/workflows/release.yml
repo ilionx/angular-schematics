@@ -1,0 +1,19 @@
+name: Push
+on:
+  push:
+    branches:
+      - 'master'
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: Install dependencies
+        run: yarn
+      - name: Build packages
+        run: yarn build
+      - uses: plutotcool/release@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          npm_token: ${{ secrets.NPM_TOKEN }}
