@@ -7,7 +7,7 @@
     "url": "https://www.kevinboosten.dev/"
   },
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "is-ci || husky install",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "test": "lerna run test --ignore=sandbox",
@@ -23,6 +23,7 @@
     "@commitlint/config-lerna-scopes": "^12.1.1",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^6.0.0",
+    "is-ci": "^3.0.0",
     "lerna": "^4.0.0",
     "prettier": "2.2.1"
   },
