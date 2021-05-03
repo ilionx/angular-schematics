@@ -9,15 +9,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-      - name: Install dependencies
-        run: npm install
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+      - name: Run Yarn
+        run: yarn
       - name: Build packages
-        run: npm run build
+        run: yarn build
       - name: Run Unit Tests
-        run: npm run test
-      # - name: Execute the schematic against the sandbox
-      #   run: yarn ci:sandbox
-      # - name: Execute the schematic against the sandbox workspace
-      #   run: yarn ci:sandbox-workspace
+        run: yarn test
+      - name: Execute the schematic against the sandbox
+        run: yarn test:sandbox
