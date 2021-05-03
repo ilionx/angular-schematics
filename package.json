@@ -10,7 +10,7 @@
     "prepare": "husky install",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
-    "test": "lerna run test",
+    "test": "lerna run test --ignore=sandbox",
     "test:sandbox": "yarn sandbox:run:all",
     "clean": "lerna clean",
     "ci:publish": "lerna publish from-package -y --no-verify-access",
