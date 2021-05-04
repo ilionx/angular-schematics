@@ -1,6 +1,9 @@
 {
-  "packages": ["packages/*", "sandbox"],
-  "version": "0.0.0",
+  "packages": [
+    "packages/*",
+    "sandbox"
+  ],
+  "version": "0.0.2",
   "npmClient": "yarn",
   "useWorkspaces": true,
   "command": {

@@ -5,4 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.0.2 (2021-05-04)
 
-**Note:** Version bump only for package root
+**Note:** Version bump only for package @ilionx/app-center-build-config
