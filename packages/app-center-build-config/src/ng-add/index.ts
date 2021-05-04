@@ -31,7 +31,7 @@ export function appCenterBuildConfig(_options: Schema): Rule {
     return chain([
       addPostCloneScript(cliOptions, cliOptions.iosPath),
       addPostCloneScript(cliOptions, cliOptions.androidPath),
-      addRootScript(),
+      addRootScript(cliOptions),
     ])(tree, _context);
   };
 }
@@ -66,11 +66,16 @@ function addPostCloneScript(options: Schema, path: string): Rule {
   };
 }
 
-function addRootScript(): Rule {
+function addRootScript(options: Schema): Rule {
   return (tree: Tree, context: SchematicContext) => {
     const sourceTemplate = url('./files/root-files');
 
-    const templateSource = apply(sourceTemplate, [move('./')]);
+    const templateSource = apply(sourceTemplate, [
+      template({
+        ...options,
+      }),
+      move('./'),
+    ]);
 
     return chain([mergeWith(templateSource)])(tree, context);
   };
