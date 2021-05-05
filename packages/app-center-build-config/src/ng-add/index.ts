@@ -16,23 +16,22 @@ import { Schema } from './schema';
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
-export function appCenterBuildConfig(_options: Schema): Rule {
-  return (tree: Tree, _context: SchematicContext) => {
-    let appIdFromConfig = determineAppId(tree, _context);
-    let { appId } = _options;
+export function appCenterBuildConfig(options: Schema): Rule {
+  return (tree: Tree, context: SchematicContext) => {
+    const appId = options.appId ?? determineAppId(tree, context);
 
-    if (!appIdFromConfig && !appId) {
+    if (!appId) {
       throw new SchematicsException('Could not determine appId. Please run the schematic with: `--app-id name.of.my.app` ');
     }
 
-    _context.logger.info(`About to run schematic with app id ${appId}`);
-    const cliOptions = getDefaultOptions(_context, _options, new AppCenterOptions());
+    context.logger.info(`About to run schematic with app id ${appId}`);
+    const cliOptions = getDefaultOptions(context, { ...options, appId }, new AppCenterOptions());
 
     return chain([
       addPostCloneScript(cliOptions, cliOptions.iosPath),
       addPostCloneScript(cliOptions, cliOptions.androidPath),
       addRootScript(cliOptions),
-    ])(tree, _context);
+    ])(tree, context);
   };
 }
 
