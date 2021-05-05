@@ -8,9 +8,9 @@ This project uses [Lerna](https://github.com/lerna/lerna) with [Yarn workspaces]
 
 This is a monorepo which contains many schematic related packages:
 
-| Project                     | Package                                                                                        | Version                                                                                                                                           | Links                                                                                                    |
-| --------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| **app-center-build-config** | [`@ilionx/app-center-build-config`](https://npmjs.com/package/@ilionx/app-center-build-config) | [![latest](https://img.shields.io/npm/v/%ilionx%2Fapp-center-build-config/latest.svg)](https://npmjs.com/package/@ilionx/app-center-build-config) | [![README](https://img.shields.io/badge/README--green.svg)](/packages/app-center-build-config/README.md) |
+| Project                     | Package                                                                                        | Version                                                                                                                                         | Links                                                                                                     |
+| --------------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| **app-center-build-config** | [`@ilionx/app-center-build-config`](https://npmjs.com/package/@ilionx/app-center-build-config) | [![latest](https://img.shields.io/npm/v/@ilionx/app-center-build-config/latest.svg)](https://npmjs.com/package/@ilionx/app-center-build-config) | [![README](https://img.shields.io/badge/-README-brightgreen)](packages/app-center-build-config/README.md) |
 
 ## Getting Started - Local Development
 
