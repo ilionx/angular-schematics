@@ -31,6 +31,9 @@
     "packages/*",
     "sandbox"
   ],
+  "ng-add": {
+    "save": false
+  },
   "bugs": {
     "url": "https://github.com/ilionx/angular-schematics/issues"
   },
