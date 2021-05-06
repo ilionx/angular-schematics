@@ -1,6 +1,6 @@
 {
   "name": "@ilionx/app-center-build-config",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This schematic will add the App Center build configuration to build your Ionic + Capacitor app with Microsoft App Center.",
   "author": {
     "name": "Kevin Boosten",
