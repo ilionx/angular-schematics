@@ -36,5 +36,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "ng-add": {
+    "save": false
   }
 }
